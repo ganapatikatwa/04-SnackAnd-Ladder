@@ -15,12 +15,14 @@ namespace SnakeAndLadder
         {
             int position1 = 0;
             int dieRoll=0;
+            int dicecount = 0;
             Console.WriteLine("Initial Position of Player 1:"+position1);
             while(position1<100)
             { 
 
             Random random=new Random();
             dieRoll= random.Next(1,7);
+                dicecount++;
             //Console.WriteLine("Die Roll:"+dieRoll);
             //position1 = dieRoll;
             //Console.WriteLine("Position of Player after Die Roll:"+dieRoll);
@@ -61,6 +63,7 @@ namespace SnakeAndLadder
 
             }
             Console.WriteLine("Player position1 reaches 100 and the exact winning position is :" + position1);
+            Console.WriteLine("player wins with a dice count of: " + dicecount);
           
         }
     }
