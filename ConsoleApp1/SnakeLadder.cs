@@ -16,41 +16,46 @@ namespace SnakeAndLadder
             int position1 = 0;
             int dieRoll=0;
             Console.WriteLine("Initial Position of Player 1:"+position1);
+            while(position1<100)
+            { 
 
             Random random=new Random();
             dieRoll= random.Next(1,7);
-            Console.WriteLine("Die Roll:"+dieRoll);
-            position1 = dieRoll;
-            Console.WriteLine("Position of Player after Die Roll:"+dieRoll);
+            //Console.WriteLine("Die Roll:"+dieRoll);
+            //position1 = dieRoll;
+            //Console.WriteLine("Position of Player after Die Roll:"+dieRoll);
 
             int options = random.Next(0, 3);
-            Console.WriteLine("After Getting Random Option is:"+options);
+            //Console.WriteLine("After Getting Random Option is:"+options);
 
-            switch(options)
-            {
-                case Ladder:
-                    Console.WriteLine("In options if we getting Ladder");
-                    position1 += dieRoll;
-                    Console.WriteLine("New Position after getting Ladder:"+position1);
-                    break;
+                switch (options)
+                {
+                    case Ladder:
+                        Console.WriteLine("In options if we getting Ladder");
+                        position1 += dieRoll;
+                        Console.WriteLine("New Position after getting Ladder:" + position1);
+                        break;
 
-                case Snake:
-                    Console.WriteLine("In options Player bit by Snake");
-                    position1 -= dieRoll;
-                    Console.WriteLine("New Position of player after bit by Snake:"+position1);
+                    case Snake:
+                        Console.WriteLine("In options Player bit by Snake");
+                        position1 -= dieRoll;
+                        Console.WriteLine("New Position of player after bit by Snake:" + position1);
 
-                    if(position1<0)
-                    {
-                        position1 = 0;
-                        Console.WriteLine("New Position of player after bit by Snake:"+position1);
-                    }
-                    break;
+                        if (position1 < 0)
+                        {
+                            position1 = 0;
+                            Console.WriteLine("New Position of player after bit by Snake:" + position1);
+                        }
+                        break;
 
-                default:
-                    Console.WriteLine("In position we got No play:"+position1);
-                    break;
+                    default:
+                        Console.WriteLine("In position we got No play:" + position1);
+                        break;
+                }
+                Console.WriteLine("Current Position of Player:"+position1);
 
             }
+            Console.WriteLine("Player position1 reaches 100 and he wins at :" + position1);
 
 
         }
